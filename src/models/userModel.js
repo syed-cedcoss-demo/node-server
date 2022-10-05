@@ -9,18 +9,29 @@ const userSchema = new Schema(
       min: [5, "Email must be greater than 5"],
       max: [25, "Email must be less than 25"],
     },
-    name: {
+    username: {
       type: String,
-      required: [true, "name should not be null"],
-      min: [3, "Name must be greater than 2"],
-      max: [15, "Name must be less than 15"],
+      unique: [true, "username should  be unique"],
+      required: [true, "username should not be null"],
+      min: [5, "username must be greater than 5"],
+      max: [25, "username must be less than 25"],
     },
-    gender: {
+    firstName: {
       type: String,
-      enum: {
-        values: ["Male", "Female", "Other"],
-        message: "We accept only Male, Female & Other Type",
-      },
+      required: [true, "first name should not be null"],
+      min: [3, "first name must be greater than 2"],
+      max: [10, "first name must be less than 10"],
+    },
+    lastName: {
+      type: String,
+      required: [true, "last name should not be null"],
+      min: [3, "last name must be greater than 2"],
+      max: [10, "last name must be less than 10"],
+    },
+    password: {
+      type: String,
+      required: [true, "password should not be null"],
+      select: false,
     },
   },
   { timestamps: true }
