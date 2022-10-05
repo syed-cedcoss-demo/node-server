@@ -19,7 +19,7 @@ const userSchema = new Schema(
       type: String,
       enum: {
         values: ["Male", "Female", "Other"],
-        message: "We accept on Male, Female & Other Value",
+        message: "We accept only Male, Female & Other Type",
       },
     },
   },
