@@ -24,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: "1024px" }));
 app.use(cors(corsOptions));
 app.use("/images", express.static(__dirname + "/public/images"));
+app.set("trust proxy", true);
 
 //status api
 app.get("/", (req, res) =>

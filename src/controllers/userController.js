@@ -26,6 +26,7 @@ export const signup = async (req, res) => {
 
 export const getUser = async (req, res) => {
   try {
+    console.log("req.ip", req.ip);
     const user = await userModel.find({});
     res.status(200).send(user);
   } catch (error) {
