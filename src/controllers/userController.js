@@ -2,6 +2,7 @@ import chalk from "chalk";
 import userModel from "../models/userModel.js";
 import { hashPassword, verifyPassword } from "../services/hash.js";
 import { signJWT, verifyJWT } from "../services/jwt.js";
+import { registrationMail } from "../services/mail.js";
 
 export const signup = async (req, res) => {
   try {
@@ -12,7 +13,11 @@ export const signup = async (req, res) => {
     console.log("req.body", payload);
     const user = await userModel.create(payload);
     const token = await signJWT({ id: user?._id });
-
+    await registrationMail({
+      email: user?.email,
+      name: "Syed Hasnain",
+      url: "https://codepen.io/syed-dev/pen/BaxadyM?editors=1000", //add toekn fuf
+    });
     res.status(200).send({ token, _id: user?._id, email: user?.email });
   } catch (error) {
     console.log(chalk.bgRed.bold(error?.message));

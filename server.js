@@ -1,9 +1,9 @@
+import chalk from "chalk";
+import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import express from "express";
-import chalk from "chalk";
-import dotenv from "dotenv";
-import cors from "cors";
 import { dbConnection } from "./src/config/dbConnection.js";
 import userRoute from "./src/routes/userRoute.js";
 
