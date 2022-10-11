@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
-import { signUp } from "../templates/email.js";
+import { signUp } from "../services/email.js";
 dotenv.config();
 
 let transporter = nodemailer.createTransport({
