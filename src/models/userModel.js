@@ -33,6 +33,10 @@ const userSchema = new Schema(
       required: [true, "password should not be null"],
       select: false,
     },
+    isActive: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

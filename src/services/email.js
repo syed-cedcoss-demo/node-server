@@ -55,7 +55,7 @@ export const signUp = (data) => {
               <h1
                 style="color: #64d71f; cursor: pointer; font-weight: 600; margin: 0"
               >
-                ZOHO &nbsp;&nbsp;<span style="color: #333">Integration</span>
+                ZOHO &nbsp;<span style="color: #333">Integration</span>
               </h1>
             </td>
           </tr>
