@@ -55,7 +55,7 @@ export const signUp = (data) => {
               <h1
                 style="color: #64d71f; cursor: pointer; font-weight: 600; margin: 0"
               >
-                ZOHO<span style="color: #333">Integration</span>
+                ZOHO &nbsp;&nbsp;<span style="color: #333">Integration</span>
               </h1>
             </td>
           </tr>
@@ -65,8 +65,8 @@ export const signUp = (data) => {
           </tr>
           <tr>
             <td style="padding-top: 10px; text-align: justify">
-              In order to reset your password you have to verify its you, use below
-              button to reset the password.
+              In order to verify your account you have to verify its you, use below
+              button to verify the account.
             </td>
           </tr>
     
@@ -97,7 +97,9 @@ export const signUp = (data) => {
           </tr>
            <tr>
             <td style="padding-top: 10px; text-align: justify">
-              copyright &copy;  2021-22, All rights reserved
+              copyright &copy;  ${new Date().getFullYear()}-${
+    new Date().getFullYear() + 1
+  }, All rights reserved
             </td>
           </tr>
         </table>

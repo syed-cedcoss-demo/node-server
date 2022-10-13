@@ -14,8 +14,8 @@ export const signup = async (req, res) => {
     const token = await signJWT({ id: user?._id });
     await registrationMail({
       email: user?.email,
-      name: "Syed Hasnain",
-      url: "https://codepen.io/syed-dev/pen/BaxadyM?editors=1000", //add verification url
+      name: user?.username,
+      url: "https://yopmail.com/en/wm", //add verification url
     });
     res.status(200).send({ token, _id: user?._id, email: user?.email });
   } catch (error) {

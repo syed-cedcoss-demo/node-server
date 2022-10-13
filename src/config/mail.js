@@ -19,10 +19,10 @@ let transporter = nodemailer.createTransport({
 export const registrationMail = async (data) => {
   try {
     const info = await transporter.sendMail({
-      from: "Syed Hasnain Mehadi",
+      from: process.env.EMAIL_ID,
       to: data?.email,
-      subject: "Than you for rergisration",
-      text: "Successfully register",
+      subject: "Account Confirmation Mail",
+      text: "Account Confirmation Mail",
       html: signUp(data),
     });
     console.log(chalk.bgYellowBright.bold("sent email id:", info.messageId));
