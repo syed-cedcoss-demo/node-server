@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import express from "express";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
+import { cronJob } from "./src/config/cron.js";
 import { dbConnection } from "./src/config/dbConnection.js";
 import userRoute from "./src/routes/userRoute.js";
 
@@ -18,6 +19,9 @@ var corsOptions = {
 
 //Database Connect
 dbConnection();
+
+//cron job
+cronJob();
 
 //middleware
 app.use(express.json());

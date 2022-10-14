@@ -37,6 +37,10 @@ const userSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    otp: {
+      type: Number,
+      default: Math.floor(Math.random() * 1000000),
+    },
   },
   { timestamps: true }
 );
