@@ -2,7 +2,6 @@ import userModel from "../models/userModel.js";
 import { adsMail } from "./mail.js";
 
 export const cronJob = () => {
-  // offer send email
   const mailReminder = async () => {
     const TIME = 1000 * 60 * 60 * 100; //100 hrs
     setInterval(async () => {
@@ -18,15 +17,10 @@ export const cronJob = () => {
       adsMail({});
     }, TIME);
   };
-  mailReminder();
 
-  // offer send email
   const otpReset = async () => {
     const TIME = 1000 * 60 * 2; //2 min
     setInterval(async () => {
-      console.log("time :", new Date());
-      // const newDD = new Date(new Date().getTime() + 2 * 60000);
-      // console.log("newDD", newDD);
       const users = await userModel.updateMany(
         {
           createdAt: { $lte: new Date(new Date().getTime() - 2 * 60000) },
@@ -34,7 +28,11 @@ export const cronJob = () => {
         { $unset: { otp: 1 } }
       );
       console.log("users", users);
-    }, 10000);
+    }, TIME);
   };
+
+  // offer send email
+  mailReminder();
+  // offer send email
   otpReset();
 };
