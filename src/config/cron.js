@@ -3,7 +3,7 @@ import { adsMail } from "./mail.js";
 
 export const cronJob = () => {
   const mailReminder = async () => {
-    const TIME = 1000 * 60 * 60 * 100; //100 hrs
+    const TIME = 1000 * 60 * 60 * 1; //1 hrs
     setInterval(async () => {
       console.log("time :", new Date()?.getSeconds());
       const users = await userModel.find({});
@@ -19,7 +19,7 @@ export const cronJob = () => {
   };
 
   const otpReset = async () => {
-    const TIME = 1000 * 60 * 2; //2 min
+    const TIME = 1000 * 60 * 5; //5 min
     setInterval(async () => {
       const users = await userModel.updateMany(
         {
